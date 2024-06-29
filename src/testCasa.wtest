@@ -1,0 +1,19 @@
+import casa.*
+import cosas.*
+test "Las funciones de la casa funcionan adecuadamente" {
+
+	casaDePepeYJulian.comprar(microondas)
+	casaDePepeYJulian.comprar(packComida)
+	casaDePepeYJulian.comprar(heladera)
+	assert.equals(4, casaDePepeYJulian.cantidadDeCosasCompradas())
+	assert.that(casaDePepeYJulian.tieneComida())
+	assert.that(casaDePepeYJulian.vieneDeEquiparse())
+	assert.that(casaDePepeYJulian.esDerrochona())
+	assert.equals(heladera, casaDePepeYJulian.compraMasCara())
+	assert.equals([microondas, heladera], casaDePepeYJulian.electrodomesticosComprados())
+	assert.notThat(casaDePepeYJulian.malaEpoca())
+	assert.equals(#{kiloDeMilanesas, cama}, casaDePepeYJulian.queFaltaComprar(#{microondas, heladera, kiloDeMilanesas, tiraDeAsado, cama}))
+	assert.notThat(casaDePepeYJulian.faltaComida())
+	assert.equals(1783600, casaDePepeYJulian.dineroDisponible())
+
+}

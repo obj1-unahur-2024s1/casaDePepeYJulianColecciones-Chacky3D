@@ -1,0 +1,54 @@
+import cosas.*
+test "Los valores de la cosas son los adecuados"{
+
+	assert.equals(200000, heladera.precio())
+	assert.notThat(heladera.esComida())
+	assert.that(heladera.esElectrodomestico())
+	
+	assert.equals(80000, cama.precio())
+	assert.notThat(cama.esComida())
+	assert.notThat(cama.esElectrodomestico())
+	
+	assert.equals(3500, tiraDeAsado.precio())
+	assert.that(tiraDeAsado.esComida())
+	assert.notThat(tiraDeAsado.esElectrodomestico())
+	
+	assert.equals(500, paqueteDeFideos.precio())
+	assert.that(paqueteDeFideos.esComida())
+	assert.notThat(paqueteDeFideos.esElectrodomestico())
+	
+	assert.equals(12000, plancha.precio())
+	assert.notThat(plancha.esComida())
+	assert.that(plancha.esElectrodomestico())
+	
+	assert.equals(2600, kiloDeMilanesas.precio())
+	assert.that(kiloDeMilanesas.esComida())
+	assert.notThat(kiloDeMilanesas.esElectrodomestico())
+	
+	assert.equals(900, botellaSalsaDeTomate.precio())
+	assert.that(botellaSalsaDeTomate.esComida())
+	assert.notThat(botellaSalsaDeTomate.esElectrodomestico())
+	
+	assert.equals(42000, microondas.precio())
+	assert.notThat(microondas.esComida())
+	assert.that(microondas.esElectrodomestico())
+	
+	assert.equals(250, kiloDeCebollas.precio())
+	assert.that(kiloDeCebollas.esComida())
+	assert.notThat(kiloDeCebollas.esElectrodomestico())
+	
+	assert.equals(500000, compu.precio())
+	assert.notThat(compu.esComida())
+	assert.that(compu.esElectrodomestico())
+	
+	assert.equals(4400, packComida.precio())
+	assert.that(packComida.esComida())
+	assert.notThat(packComida.esElectrodomestico())
+
+}
+
+test "El pack de comida se puede modificar"{
+	packComida.platoYAderezo(kiloDeMilanesas, kiloDeCebollas)
+	assert.equals(2850, packComida.precio())
+	
+}
